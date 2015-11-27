@@ -1,0 +1,17 @@
+EmailRecipient="jasonzvz@gmail.com"
+SupportPageUrl="http://connect.fusionhome.entone.com/support"
+XmppServerAddress="54.215.15.192"
+VideoServerList=(52.9.8.202 52.31.169.79 52.9.5.151)
+ServerSshKey="./key/fusionhome-prod.pem"
+KEEP_ALIVE_EMAIL_HOUR="00"                                      # Send keep alive email on every day, 00:00am
+KEEP_ALIVE_EMAIL_MINUTE="00"                                    # Send keep alive email on every day, 00:00am
+# Get current machine IP
+ip_addr=`/sbin/ifconfig | grep "inet addr" | grep -v "127.0.0.1" | sed -e "s/.*inet addr://g" | awk '{print $1}' | tr '\n' ' '`
+Current_hour=`date +"%H"`
+Current_minute=`date +"%M"`
+
+# Active camera config
+CAM_THRESHOLD="80"                                                      # Number of Active camera to send out email
+
+# Server CPU checking config
+CPU_THRESHOLD="20"                                                      # Server idle CPU threshold to send out email
